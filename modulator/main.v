@@ -4,15 +4,15 @@
 
 module fsk_modulator_tb;
 
-    // Girişler
+    // GiriÃ¾ler
     reg clk;
     reg reset;
     reg data_in;
 
-    // Çıkışlar
+    // Ã‡Ã½kÃ½Ã¾lar
     wire [31:0] sine_out;
 
-    // Modülün örneği
+    // ModÃ¼lÃ¼n Ã¶rneÃ°i
     fsk_modulator uut (
         .clk(clk),
         .reset(reset),
@@ -20,34 +20,34 @@ module fsk_modulator_tb;
         .sine_out(sine_out)
     );
 
-    // Saat sinyali oluşturma (100 MHz)
+    // Saat sinyali oluÃ¾turma (100 MHz)
     initial begin
         clk = 0;
         forever #5 clk = ~clk;
     end
 
-    // Test vektörleri
+    // Test vektÃ¶rleri
     initial begin
-        // Başlangıç değerleri
+        // BaÃ¾langÃ½Ã§ deÃ°erleri
         reset = 1;
         data_in = 0;
 
-        // Reset süresi
+        // Reset sÃ¼resi
         #20;
         reset = 0;
 
-        // Dijital veri girişini sağlama
-        #100 data_in = 1;  // Yüksek frekans
-        #1000 data_in = 0; // Düşük frekans
-        #1000 data_in = 1; // Yüksek frekans
-        #1000 data_in = 0; // Düşük frekans
-        #1000 data_in = 1; // Yüksek frekans
-        #1000 data_in = 0; // Düşük frekans
+        // Dijital veri giriÃ¾ini saÃ°lama
+        #100 data_in = 1;  // YÃ¼ksek frekans
+        #1000 data_in = 0; // DÃ¼Ã¾Ã¼k frekans
+        #1000 data_in = 1; // YÃ¼ksek frekans
+        #1000 data_in = 0; // DÃ¼Ã¾Ã¼k frekans
+        #1000 data_in = 1; // YÃ¼ksek frekans
+        #1000 data_in = 0; // DÃ¼Ã¾Ã¼k frekans
 
         #2000 $finish;
     end
 
-    // Çıkışı dosyaya yazma (analog gösterim için)
+    // Ã‡Ã½kÃ½Ã¾Ã½ dosyaya yazma (analog gÃ¶sterim iÃ§in)
     integer file;
     initial begin
         file = $fopen("sine_output.txt", "w");
