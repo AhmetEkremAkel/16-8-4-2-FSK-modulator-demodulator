@@ -15,16 +15,16 @@ module fsk_modulator(
     // Faz biriktirici
     reg [PHASE_WIDTH-1:0] phase_accumulator;
 
-    // Faz artýþ deðerleri (yüksek ve düþük frekanslar için)
+    // Faz artÃ½Ã¾ deÃ°erleri (yÃ¼ksek ve dÃ¼Ã¾Ã¼k frekanslar iÃ§in)
     reg [PHASE_WIDTH-1:0] phase_increment;
 
-    wire [PHASE_WIDTH-1:0] phase_increment_low = 32'd42949673;   // 1 MHz için
-    wire [PHASE_WIDTH-1:0] phase_increment_high = 32'd214748365;  // 5 MHz için
+    wire [PHASE_WIDTH-1:0] phase_increment_low = 32'd42949673;   // 1 MHz iÃ§in
+    wire [PHASE_WIDTH-1:0] phase_increment_high = 32'd214748365;  // 5 MHz iÃ§in
 
-    // Sine dalgasý ROM'u
+    // Sine dalgasÃ½ ROM'u
     reg [31:0] sine_rom [0:SINE_ROM_SIZE-1];
 
-    // Sine ROM'un baþlangýç deðeri
+    // Sine ROM'un baÃ¾langÃ½Ã§ deÃ°eri
     integer i;
     initial begin
         for (i = 0; i < SINE_ROM_SIZE; i = i + 1) begin
@@ -38,16 +38,16 @@ module fsk_modulator(
             phase_increment <= 0;
             sine_out <= 0;
         end else begin
-            // data_in deðerine göre faz artýþýný seç
+            // data_in deÃ°erine gÃ¶re faz artÃ½Ã¾Ã½nÃ½ seÃ§
             if (data_in)
                 phase_increment <= phase_increment_high;
             else
                 phase_increment <= phase_increment_low;
 
-            // Faz biriktiriciyi güncelle
+            // Faz biriktiriciyi gÃ¼ncelle
             phase_accumulator <= phase_accumulator + phase_increment;
 
-            // Sine deðeri al
+            // Sine deÃ°eri al
             sine_out <= sine_rom[phase_accumulator[PHASE_WIDTH-1:PHASE_WIDTH-SINE_ROM_ADDR_WIDTH]];
         end
     end
