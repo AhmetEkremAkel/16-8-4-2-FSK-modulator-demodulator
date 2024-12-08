@@ -11,7 +11,7 @@ module fsk_demodulator(
     parameter N = 1000;               // Örnek sayısı
     parameter THRESHOLD = 32'd100000; // Enerji eşiği
     parameter real FS = 100000000.0;  // Örnekleme frekansı
-    // Modülatörde 1 MHz-16 MHz arası frekanslar kullandığımızı varsayalım
+    // Modülatörde 1 MHz-16 MHz arası frekanslar kullanıyoruz.
     // frequency_increments'tan türetilen frekans değerleri:
     reg [31:0] freq_table [0:15];
 
@@ -103,7 +103,7 @@ module fsk_demodulator(
                     data_out <= data_out; // Enerji eşiği geçilmezse veri değişmez
                 end
 
-                // Örnek indeksi sıfırla
+
                 sample_index <= 0;
             end
         end
