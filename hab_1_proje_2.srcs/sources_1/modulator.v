@@ -20,7 +20,6 @@ module fsk_modulator(
     reg [PHASE_WIDTH-1:0] phase_increment;
 
     // Örnek olarak 1 MHz den başlayarak 16 MHz e kadar lineer artışla varsayıyoruz.
-    // (Değerleri kendi sisteminizin frekansına göre ayarlayın.)
     initial begin
         // Burada f_clk=100MHz varsayımı altında her MHz için hesaplanmış değerler kullanılıyor.
         frequency_increments[0]  = 16'd655;   // ~1 MHz
