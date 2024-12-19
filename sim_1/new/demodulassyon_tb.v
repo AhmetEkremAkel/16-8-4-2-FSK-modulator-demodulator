@@ -64,65 +64,7 @@ module fsk_demodulator_tb;
             #1000 data_in = 4'b1111;
         end
         #1000 $finish;
-        /*
-        for (j = 0;j<5 ;j=j+1 ) begin
-            //noise_constant = noise_constant + 50;
-            freq = 1000000.0;
-            for (t = 0; t < N; t = t + 1) begin
-                t_real = t * 1.0;
-                adc_in = $rtoi(amplitude * $sin(2.0 * 3.1415926535 * freq * t_real / (N - 1.0)));
-                noise = ($random(seed) % noise_constant) - (noise_constant/2);
-                adc_in = adc_in + noise;
-                #10;
-            end
-            // 1. Durum: Düşük frekanslı sinyal (data_out beklenen = 0)
-            freq = 1000000.0;
-            for (t = 0; t < N; t = t + 1) begin
-                t_real = t * 1.0;
-                adc_in = $rtoi(amplitude * $sin(2.0 * 3.1415926535 * freq * t_real / (N - 1.0)));
-                noise = ($random(seed) % noise_constant) - (noise_constant/2);
-                adc_in = adc_in + noise;
-                #10;
-            end
 
-            // 2. Durum: Yüksek frekanslı sinyal (data_out beklenen = 1)
-            freq = 2000000.0;
-            for (t = 0; t < N; t = t + 1) begin
-                t_real = t * 1.0;
-                adc_in = $rtoi(amplitude * $sin(2.0 * 3.1415926535 * freq * t_real / (N - 1.0)));
-                noise = ($random(seed) % noise_constant) - (noise_constant/2);
-                adc_in = adc_in + noise;
-                #10;
-            end
-            // 2. Durum: Yüksek frekanslı sinyal (data_out beklenen = 1)
-            freq = 2000000.0;
-            for (t = 0; t < N; t = t + 1) begin
-                t_real = t * 1.0;
-                adc_in = $rtoi(amplitude * $sin(2.0 * 3.1415926535 * freq * t_real / (N - 1.0)));
-                noise = ($random(seed) % noise_constant) - (noise_constant/2);
-                adc_in = adc_in + noise;
-                #10;
-            end
-            // 3. Durum: Düşük frekanslı sinyal (data_out beklenen = 0)
-            freq = 1000000.0;
-            for (t = 0; t < N; t = t + 1) begin
-                t_real = t * 1.0;
-                adc_in = $rtoi(amplitude * $sin(2.0 * 3.1415926535 * freq * t_real / (N - 1.0)));
-                noise = ($random(seed) % noise_constant) - (noise_constant/2);
-                adc_in = adc_in + noise;
-                #10;
-            end
-
-            freq = 2000000.0;
-            for (t = 0; t < N; t = t + 1) begin
-                t_real = t * 1.0;
-                adc_in = $rtoi(amplitude * $sin(2.0 * 3.1415926535 * freq * t_real / (N - 1.0)));
-                noise = ($random(seed) % noise_constant) - (noise_constant/2);
-                adc_in = adc_in + noise;
-                #10;
-            end
-        end*/
-        
     end
 
 
