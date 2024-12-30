@@ -9,6 +9,4 @@
 
 ![image](https://github.com/user-attachments/assets/26d6ebb3-11bf-4a1e-92fd-2180a822f10c)
 
-![image](https://github.com/user-attachments/assets/7588f48c-89c3-4405-9761-3f04ced45bad)
-
 ![image](https://github.com/user-attachments/assets/ef3e22a8-7a11-49b7-a754-a391830786ed)
