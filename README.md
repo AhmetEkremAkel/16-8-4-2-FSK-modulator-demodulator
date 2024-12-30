@@ -1,8 +1,8 @@
-#Frequency-Shift Keying (FSK) Modulation and Demodulation on FPGA
+# Frequency-Shift Keying (FSK) Modulation and Demodulation on FPGA
 
 This project demonstrates the implementation of Frequency-Shift Keying (FSK) modulation and demodulation on an FPGA. Below is an overview of the key modules and parameters used in the project.
 
-##Modulation
+# Modulation
 
 The modulation process involves encoding the input data by varying the frequency of a carrier signal.
 
@@ -14,7 +14,7 @@ sine_out, cos_out: Outputs of the modulator representing sine and cosine wavefor
 
 ![image](https://github.com/user-attachments/assets/14c27cfe-85c1-4c56-bace-96196a8af055)
 
-##Channel Effects
+## Channel Effects
 
 This module simulates noise and distortion in the communication channel.
 
@@ -38,7 +38,7 @@ The project uses separate real and imaginary noise components to mimic real-worl
 
 ![image](https://github.com/user-attachments/assets/a51567c4-e87a-4b20-b281-f682c4fca050)
 
-##Demodulation
+## Demodulation
 
 The demodulator retrieves the transmitted data by analyzing the received noisy signal.
 
@@ -54,7 +54,7 @@ Synchronization Threshold: A fixed threshold used to detect synchronization sign
 
 ![image](https://github.com/user-attachments/assets/26d6ebb3-11bf-4a1e-92fd-2180a822f10c)
 
-##Error Calculation
+## Error Calculation
 
 Bit Error Rate (BER) is calculated by comparing the transmitted and received data.
 
@@ -66,13 +66,13 @@ Bits Sent: For accurate results, 10,000 and 100,000 bits are used in different e
 
 ![image](https://github.com/user-attachments/assets/ef3e22a8-7a11-49b7-a754-a391830786ed)
 
-##Results and Comparison
+## Results and Comparison
 
 MATLAB vs FPGA: The BER curves from FPGA implementation closely resemble MATLAB simulations.
 
 Limitations: Realistic channel effects (e.g., fading) are not included, causing deviations in certain SNR ranges.
 
-##How to Run the Code
+## How to Run the Code
 
 Clone the repository.
 
