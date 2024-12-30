@@ -8,7 +8,7 @@ The modulation process involves encoding the input data by varying the frequency
 
 Parameters:
 
-data_in: Input digital data to be transmitted. This project supports 8-FSK, meaning 8 distinct frequencies are used for modulation.
+data_in: Input digital data to be transmitted.
 
 sine_out, cos_out: Outputs of the modulator representing sine and cosine waveforms corresponding to the modulated signal.
 
