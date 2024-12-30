@@ -18,8 +18,6 @@ sine_out, cos_out: Outputs of the modulator representing sine and cosine wavefor
 
 This module simulates noise and distortion in the communication channel.
 
-Parameters:
-
 Gaussian Noise Parameters:
 
 μ (mean): Set to 0 in this project.
@@ -27,8 +25,6 @@ Gaussian Noise Parameters:
 σ (standard deviation): Controls the intensity of the noise.
 
 Complex Noise: Simulated as a combination of real and imaginary parts (cosine and sine components).
-
-Explanation:
 
 Noise is generated using a Gaussian distribution (Box-Muller method) and added to the modulated signal.
 
