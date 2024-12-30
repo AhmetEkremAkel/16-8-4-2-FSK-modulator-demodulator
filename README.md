@@ -1,4 +1,4 @@
-# Frequency-Shift Keying (FSK) Modulation and Demodulation on FPGA
+# 16-8-4-2 Frequency-Shift Keying (FSK) Modulation and Demodulation on FPGA
 
 This project demonstrates the implementation of Frequency-Shift Keying (FSK) modulation and demodulation on an FPGA. Below is an overview of the key modules and parameters used in the project.
 
