@@ -60,7 +60,7 @@ SNR (Signal-to-Noise Ratio): A key metric used to evaluate the performance.
 
 Bits Sent: For accurate results, 10,000 and 100,000 bits are used in different experiments.
 
-Important note : There is an error of no BER after 3db SNR.
+Important note : There is an error in simulations of no BER after 3db SNR.
 
 ![image](https://github.com/user-attachments/assets/ef3e22a8-7a11-49b7-a754-a391830786ed)
 
