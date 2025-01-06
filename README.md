@@ -76,6 +76,7 @@ Clone the repository.
 
 Load the Verilog files (modulation.v, channel_effects.v, demodulation.v, and testbench files) into your FPGA development environment (e.g., Vivado).
 
-Run simulations and analyze the output. Taha was here. ?!
+Run simulations and analyze the output.
+
 
 
