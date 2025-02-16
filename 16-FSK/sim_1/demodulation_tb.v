@@ -2,13 +2,13 @@
 
 module fsk_demodulator_tb;
 
-    // Girişler
+    // Inputs
     reg clk;
     reg reset;
     reg [3:0] data_in;
     reg start;
 
-    // Çıkışlar
+    // Outputs
     wire [3:0] data_out;
 
     // DUT
@@ -20,35 +20,33 @@ module fsk_demodulator_tb;
         .data_out(data_out)
     );
 
-    // Saat sinyali (100 MHz -> 10 ns)
+    // Clock
     initial begin
         clk = 0;
         forever #5 clk = ~clk;
     end
 
     // Hata sayacı ve toplam kontrol sayacı
-    integer error_count = 0;   // <--- Eklendi
-    integer total_count = 0;   // <--- Eklendi
+    integer error_count = 0;  
+    integer total_count = 0;  
 
     // Bir önceki data_in değerini tutacak register
-    reg [3:0] last_data_in;    // <--- Eklendi
+    reg [3:0] last_data_in;    
 
     integer j;
 
     initial begin
-        // Her simulasyonda farklı bir seed için $time kullanabiliriz
+        
         $srandom($time);
         
-        // Ya da simulasyon parametresi olarak dışarıdan alabiliriz
-        // $srandom(SEED_VALUE);
+        
     end
 
     initial begin
-        // Her simulasyonda farklı bir seed için $time kullanabiliriz
+        
         $srandom(32'hDEAD_BEEF);
         
-        // Ya da simulasyon parametresi olarak dışarıdan alabiliriz
-        // $srandom(SEED_VALUE);
+        
     end
 
 
@@ -65,9 +63,8 @@ module fsk_demodulator_tb;
         start = 0;
         #80;
 
-        // Başlarken last_data_in'i sıfırla (veya data_in ile aynı yap)
-        last_data_in = 4'b0001; // <--- Eklendi
-        data_in = 4'b0001;      // Bu da ilk değerimiz
+        last_data_in = 4'b0001; 
+        data_in = 4'b0001;     
         #20;
         for (j = 0; j < 625; j = j + 1) begin
 
@@ -175,8 +172,7 @@ module fsk_demodulator_tb;
             if (data_out != last_data_in) error_count = error_count + 1;
             last_data_in = data_in;
         end
-        
-        // Bir tur daha bekleyip toplam hatayı ekrana basıyoruz
+
         #1000;
         $display("Error Count = %d, Total Count = %d, BER = %f",
                  error_count, total_count,
