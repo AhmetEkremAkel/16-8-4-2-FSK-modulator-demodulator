@@ -14,16 +14,13 @@ wire [17:0]wire_3;
 wire [17:0]wire_4;
 wire [17:0]wire_5;
 wire [17:0]wire_6;
-
-
-wire start_bit;
-assign start_bit = start;
-
 wire [17:0]wire_7;
+wire start_bit;
 
+  
+assign start_bit = start;
 assign wire_4 = wire_1;
 assign wire_2 = wire_3;
-
 assign wire_6 = wire_5;
 
 fsk_modulator modulator_1(
@@ -43,7 +40,6 @@ channel_effects channel_1(
 .output_2(wire_7)
 );
 
-
 fsk_demodulator demodulator_1(
 .clk(clk),
 .reset(reset),
@@ -51,9 +47,5 @@ fsk_demodulator demodulator_1(
 .adc_in_cos(wire_7),
 .data_out(data_out)
 );
-
-
-
-
 
 endmodule
